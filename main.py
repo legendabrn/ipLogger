@@ -13,8 +13,7 @@ logger = socket(AF_INET, SOCK_DGRAM)
 logger.bind(addr)
 
 # Бесконечный цикл
-while True:
-    
+while True:   
     # Получаем сообщение и айпи клиента
     conn, addr = logger.recvfrom(1024)
     
@@ -26,7 +25,6 @@ while True:
         # Если айпи не найден, то добавим его в лист и выведем в консоль
         logIP.append(addr[0])
         print('[IP LOGGER]', addr[0])
-
-    
+        
 # Закрываем сокет
 logger.close()
